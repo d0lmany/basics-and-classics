@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winform", "winform\winform.csproj", "{9433D6B3-CE1E-428D-8D3C-F6BACC6AED40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xaml", "xaml\xaml.csproj", "{CCAD0F72-EB06-4D16-AC4E-19E00231CED4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9433D6B3-CE1E-428D-8D3C-F6BACC6AED40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9433D6B3-CE1E-428D-8D3C-F6BACC6AED40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9433D6B3-CE1E-428D-8D3C-F6BACC6AED40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9433D6B3-CE1E-428D-8D3C-F6BACC6AED40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAD0F72-EB06-4D16-AC4E-19E00231CED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAD0F72-EB06-4D16-AC4E-19E00231CED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAD0F72-EB06-4D16-AC4E-19E00231CED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAD0F72-EB06-4D16-AC4E-19E00231CED4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B3EB55C-CC2D-454A-9057-E090C888F680}
+	EndGlobalSection
+EndGlobal

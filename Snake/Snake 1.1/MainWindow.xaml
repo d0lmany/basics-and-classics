@@ -1,0 +1,86 @@
+﻿<Window x:Class="Snake_1._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Snake_1._1"
+        mc:Ignorable="d"
+        Title="Snake" Height="660" Width="1200" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="#FFD9D9D9" KeyDown="Window_KeyDown">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--GAMEBOARD LOCIG START-->
+        <Canvas x:Name="GameBoard" Background="White" Grid.ColumnSpan="6" Width="1190" Height="585" MouseDown="Window_MouseDown">
+            <Rectangle x:Name="SnakeHead" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="590" Canvas.Top="290" Width="15" Height="15" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/head.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Ellipse x:Name="Apple" Fill="Red" Stroke="DarkRed" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="590" Canvas.Top="290" Width="15" Height="15" Panel.ZIndex="0"/>
+        </Canvas>
+        <!--GAME BOARD LOCIG END-->
+        <Rectangle Fill="White" Grid.Row="1" Margin="0,5,2.5,0"/>
+        <Rectangle Fill="White" Grid.Row="1" Margin="2.5,5,2.5,0" Grid.Column="1"/>
+        <Rectangle Fill="White" Grid.Row="1" Margin="2.5,5,2.5,0" Grid.Column="2"/>
+        <Rectangle Fill="White" Grid.Row="1" Margin="2.5,5,2.5,0" Grid.Column="3"/>
+        <Rectangle Fill="White" Grid.Row="1" Margin="2.5,5,2.5,0" Grid.Column="4"/>
+        <Rectangle Fill="White" Grid.Row="1" Margin="2.5,5,0,0" Grid.Column="5"/>
+        <!--FUNC BUTTONS-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Restart" FontSize="20" Content="Restart" Background="{x:Null}" Margin="0,5,0,0" HorizontalContentAlignment="Center" MouseDown="Restart_MouseDown" VerticalContentAlignment="Center">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.1" From="Black" To="Green"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.1" From="Green" To="Black"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <Label Grid.Column="1" x:Name="Exit" FontSize="20" Content="Exit" Background="{x:Null}" Margin="0,5,5,0" HorizontalContentAlignment="Center" MouseDown="Exit_MouseDown" VerticalContentAlignment="Center">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.1" From="Black" To="Red"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.1" From="Red" To="Black"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+        </Grid>
+        <Label Grid.Row="1" Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Content="Score:" FontSize="20"/>
+        <Label x:Name="ScoreOut" Grid.Row="1" Grid.Column="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="0" FontSize="20"/>
+        <Label Grid.Row="1" Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="dev: d0lmany" FontSize="20" MouseDown="Label_MouseDown"/>
+        <Label x:Name="GameMessage" FontSize="72" Grid.Column="1" Grid.ColumnSpan="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Visibility="Collapsed"/>
+    </Grid>
+</Window>
